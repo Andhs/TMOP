@@ -1,0 +1,53 @@
+{
+	"options": {
+		"input file":				"text_rpharm_ru_en_test.txt",
+
+		"output folder":			"output",
+		"source language":			"ru",
+		"target language":			"en",
+
+		"normalize scores":			"true",
+		"emit scores":				"false",
+		"no out files":				"false",
+		"max decision":				-1
+	},
+
+	"policies": [
+		["OneNo",					"on"],
+		["TwentyNo",				"off"],
+		["MajorityVoting",			"off"]
+	],
+
+	"filters": [
+		["SampleFilter",					"off"],
+		["LengthStats",						"off"],
+
+		["LengthRatio",						"off"],
+		["ReverseLengthRatio",				"off"],
+		["WordRatio",						"off"],
+		["ReverseWordRatio",				"off"],
+		["WordLength",						"off"],
+		["TagFinder",						"off"],
+		["RepeatedChars",					"off"],
+		["RepeatedWords",					"off"],
+
+		["Lang_Identifier",					"on"],
+
+		["AlignedProportion",				"off"],
+		["BigramAlignedProportion",			"off"],
+		["NumberOfUnalignedSequences",		"off"],
+		["LongestAlignedSequence",			"off"],
+		["LongestUnalignedSequence",		"off"],
+		["AlignedSequenceLength",			"off"],
+		["UnalignedSequenceLength",			"off"],
+		["FirstUnalignedWord",				"off"],
+		["LastUnalignedWord",				"off"],
+
+		["WE_Average",						"off"],
+		["WE_Median",						"off"],
+		["WE_BestAlignScore",				"off"],
+		["WE_ScoreOtherAlignment",			"off"],
+		["WE_ScoreAlign_BestForRest",		"off"]
+	]
+}
+

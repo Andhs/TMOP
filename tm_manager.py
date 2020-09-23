@@ -91,7 +91,7 @@ class TMManager:
 		if self.config_file_name:
 			conf_file = open(self.config_file_name)
 		else:
-			conf_file = open("config.json")
+			conf_file = open("config1.json")
 		try:
 			config = json.load(conf_file)
 		except ValueError:
