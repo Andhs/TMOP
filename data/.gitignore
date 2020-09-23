@@ -3,5 +3,5 @@
 # Except this file
 !.gitignore
 !sample*
-
+!*test.txt
 

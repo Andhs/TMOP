@@ -1,0 +1,68 @@
+1	http://r-pharm.com/ru/page/company_development	http://r-pharm.com/en/page/company_development
+2	История «Р-Фарм»	R-Pharm's History
+3	Найти	Search
+4	О группе	About R-Pharm
+5	История группы	R-Pharm's History
+6	Команда «Р-Фарм»	R-Pharm Team
+7	Социальная политика	Social Activity
+8	Этика ведения бизнеса	Ethics & Compliance
+9	Коммерческая политика	Commercial policy
+10	Производство	Manufacturing
+11	Комплекс в Ярославле	Pharmaceutical Complex in Yaroslavl
+12	Производство субстанций «Фармославль»	Pharmoslavl Substance Production Facility
+13	Завод «ОРТАТ»	ORTAT Plant
+14	Производство «Технология лекарств»	"Limited liability company ""Drugs Technology"""
+15	Предприятие «Экостиль»	Production Center Ecostil
+16	Завод R-Pharm Germany Gmbh	R-Pharm Germany GmbH Plant
+17	Международные проекты в работе	New Projects
+18	Медицинская техника	Medical equipment
+19	R&D	R&D
+20	R&D подразделения	R&D subdivision
+21	Партнерские проекты	Partnership projects
+22	Медиа	Media
+23	Новости	News
+24	СМИ о нас	Media about us
+25	Карьера	Career
+26	Новые возможности	New opportunities
+27	Образовательные проекты	Educational projects
+28	Контакты	Contacts
+29	Полный список контактов	R-Pharm in Russia
+31	О группе	About R-Pharm
+32	Рассказать друзьям:	Share with friends:
+33	"info@rpharm.ru  ||  +7 (495) 956 79 37; +7 (495) 956 79 38  ||  119421, г. Москва, Ленинский проспект, д.111Б"	2016-2017
+34	info@rpharm.ru	"info@rpharm.ru  |  +7 (495) 956 79 37; +7 (495) 956 79 38  |  119421, г. Москва, Ленинский проспект, д.111Б"
+35	"+7 (495) 956 79 37; +7 (495) 956 79 38"	"+7 (495) 956 79 37; +7 (495) 956 79 38"
+36	"Р-Фарм"", 2002-2020 Перепечатка или иное использование материалов возможно только с указанием ссылки на сайт"	Р-Фарм, 2002-2020 Перепечатка или иное использование материалов возможно только с указанием ссылки на сайт
+37	http://r-pharm.com/ru/page/politics	info@rpharm.ru
+38	Коммерческая политика	Commercial policy
+39	Найти	Search
+40	О группе	About R-Pharm
+41	История группы	R-Pharm's History
+42	Команда «Р-Фарм»	R-Pharm Team
+43	Социальная политика	Social Activity
+44	Этика ведения бизнеса	Ethics & Compliance
+45	Коммерческая политика	Commercial policy
+46	Производство	Manufacturing
+47	Комплекс в Ярославле	Pharmaceutical Complex in Yaroslavl
+48	Производство субстанций «Фармославль»	Pharmoslavl Substance Production Facility
+49	Завод «ОРТАТ»	ORTAT Plant
+50	Производство «Технология лекарств»	"Limited liability company ""Drugs Technology"""
+51	Предприятие «Экостиль»	Production Center Ecostil
+52	Завод R-Pharm Germany Gmbh	R-Pharm Germany GmbH Plant
+53	Международные проекты в работе	New Projects
+54	Медицинская техника	Medical equipment
+55	R&D	R&D
+56	R&D подразделения	R&D subdivision
+57	Партнерские проекты	Partnership projects
+58	Медиа	Media
+59	Новости	News
+60	СМИ о нас	Media about us
+61	Карьера	Career
+62	Новые возможности	New opportunities
+63	Образовательные проекты	Educational projects
+64	Контакты	Contacts
+65	Полный список контактов	R-Pharm in Russia
+67	О группе	About R-Pharm
+68	1. Коммерческая политика и Прайс-лист АО «Р-Фарм» (действующие редакции)	1. Commercial policy and price list of JSC R-Pharm (current editions)
+69	Коммерческая политика АО «Р-Фарм» в седьмой редакции (действующая редакция)	1.1. Коммерческая политика АО « Р-Фарм » во второй редакции (действующая редакция)
+70	Приложения №4 и 4а Анкета на русском и английском языках	2. Protocol of interaction with the partners (current edition)
