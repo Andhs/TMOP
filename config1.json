@@ -31,7 +31,7 @@
 		["RepeatedChars",					"off"],
 		["RepeatedWords",					"off"],
 
-		["Lang_Identifier",					"on"],
+		["Lang_Identifier1",					"on"],
 
 		["AlignedProportion",				"off"],
 		["BigramAlignedProportion",			"off"],
