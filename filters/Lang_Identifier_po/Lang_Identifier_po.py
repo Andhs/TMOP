@@ -2,10 +2,10 @@
 from abstract_filter import *
 import langid
 import polyglot
-from polyglot.text import Text, Word
+from polyglot.detect import Detector
 
 
-class Lang_Identifier(AbstractFilter):
+class Lang_Identifier_po(AbstractFilter):
 	def __init__(self):
 		self.num_of_scans = 0
 		self.src_language = ""
@@ -26,8 +26,8 @@ class Lang_Identifier(AbstractFilter):
 		pass
 
 	def process_tu(self, tu, num_of_finished_scans):
-		src_lang = langid.classify(tu.src_phrase)[0]
-		trg_lang = langid.classify(tu.trg_phrase)[0]
+		src_lang = Detector(tu.src_phrase, quiet=True).language.code
+		trg_lang = Detector(tu.trg_phrase, quiet=True).language.code
 
 		if src_lang != self.src_language and src_lang not in self.src_language:
 			return [0]
@@ -39,10 +39,8 @@ class Lang_Identifier(AbstractFilter):
 		pass
 
 	def decide(self, tu):
-#		src_lang = langid.classify(tu.src_phrase)[0]
-#		trg_lang = langid.classify(tu.trg_phrase)[0]
-		src_lang = Text(tu.src_phrase).language.code
-		trg_lang = Text(tu.trg_phrase).language.code
+		src_lang = Detector(tu.src_phrase, quiet=True).language.code
+		trg_lang = Detector(tu.trg_phrase, quiet=True).language.code
 		print(src_lang + " to " + trg_lang)
 
 		if src_lang != self.src_language and src_lang not in self.src_language:
