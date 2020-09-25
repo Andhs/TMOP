@@ -8,8 +8,7 @@ class Lang_Identifier_ft(AbstractFilter):
 		self.num_of_scans = 0
 		self.src_language = ""
 		self.trg_language = ""
-		pretrained_lang_model = "lid.176.ftz"
-		self.model = fasttext.load_model(pretrained_lang_model)
+
 
 	def initialize(self, source_language, target_language, extra_args):
 		self.num_of_scans = 0
@@ -19,7 +18,8 @@ class Lang_Identifier_ft(AbstractFilter):
 
 		if extra_args['emit scores'] == True:
 			self.num_of_scans = 1
-		langid.load_model()
+		pretrained_lang_model = "lid.176.ftz"
+		self.model = fasttext.load_model(pretrained_lang_model)
 		return
 
 	def finalize(self):

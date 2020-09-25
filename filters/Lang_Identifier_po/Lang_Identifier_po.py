@@ -17,7 +17,6 @@ class Lang_Identifier_po(AbstractFilter):
 
 		if extra_args['emit scores'] == True:
 			self.num_of_scans = 1
-		langid.load_model()
 		return
 
 	def finalize(self):
