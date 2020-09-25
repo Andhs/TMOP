@@ -26,8 +26,8 @@ class Lang_Identifier_ft(AbstractFilter):
 		pass
 
 	def process_tu(self, tu, num_of_finished_scans):
-		src_lang = model.predict(tu.src_phrase, k=1)[0][0][-2:]
-		trg_lang = model.predict(tu.trg_phrase, k=1)[0][0][-2:]
+		src_lang = self.model.predict(tu.src_phrase, k=1)[0][0][-2:]
+		trg_lang = self.model.predict(tu.trg_phrase, k=1)[0][0][-2:]
 
 		if src_lang != self.src_language and src_lang not in self.src_language:
 			return [0]
