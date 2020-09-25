@@ -18,7 +18,7 @@ class Lang_Identifier_ft(AbstractFilter):
 
 		if extra_args['emit scores'] == True:
 			self.num_of_scans = 1
-		pretrained_lang_model = "lid.176.ftz"
+		pretrained_lang_model = "./filters/Lang_Identifier_ft/lid.176.ftz"
 		self.model = fasttext.load_model(pretrained_lang_model)
 		return
 
@@ -39,8 +39,8 @@ class Lang_Identifier_ft(AbstractFilter):
 		pass
 
 	def decide(self, tu):
-		src_lang = model.predict(tu.src_phrase, k=1)[0][0][-2:]
-		trg_lang = model.predict(tu.trg_phrase, k=1)[0][0][-2:]
+		src_lang = self.model.predict(tu.src_phrase, k=1)[0][0][-2:]
+		trg_lang = self.model.predict(tu.trg_phrase, k=1)[0][0][-2:]
 		print("FT: ", src_lang + " to " + trg_lang)
 
 		if src_lang != self.src_language and src_lang not in self.src_language:
