@@ -33,6 +33,7 @@
 
 		["Lang_Identifier",					"on"],
 		["Lang_Identifier_po",					"on"],
+		["Lang_Identifier_ft",					"on"],
 
 		["AlignedProportion",				"off"],
 		["BigramAlignedProportion",			"off"],

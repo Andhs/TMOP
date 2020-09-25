@@ -1,13 +1,15 @@
 # sys.path.append(os.getcwd() + '/..') # Uncomment for standalone running
 from abstract_filter import *
-from polyglot.detect import Detector
+import fasttext
 
 
-class Lang_Identifier_po(AbstractFilter):
+class Lang_Identifier_ft(AbstractFilter):
 	def __init__(self):
 		self.num_of_scans = 0
 		self.src_language = ""
 		self.trg_language = ""
+		pretrained_lang_model = "lid.176.ftz"
+		self.model = fasttext.load_model(pretrained_lang_model)
 
 	def initialize(self, source_language, target_language, extra_args):
 		self.num_of_scans = 0
@@ -24,8 +26,8 @@ class Lang_Identifier_po(AbstractFilter):
 		pass
 
 	def process_tu(self, tu, num_of_finished_scans):
-		src_lang = Detector(tu.src_phrase, quiet=True).language.code
-		trg_lang = Detector(tu.trg_phrase, quiet=True).language.code
+		src_lang = model.predict(tu.src_phrase, k=1)[0][0][-2:]
+		trg_lang = model.predict(tu.trg_phrase, k=1)[0][0][-2:]
 
 		if src_lang != self.src_language and src_lang not in self.src_language:
 			return [0]
@@ -37,8 +39,8 @@ class Lang_Identifier_po(AbstractFilter):
 		pass
 
 	def decide(self, tu):
-		src_lang = Detector(tu.src_phrase, quiet=True).language.code
-		trg_lang = Detector(tu.trg_phrase, quiet=True).language.code
+		src_lang = model.predict(tu.src_phrase, k=1)[0][0][-2:]
+		trg_lang = model.predict(tu.trg_phrase, k=1)[0][0][-2:]
 		print(src_lang + " to " + trg_lang)
 
 		if src_lang != self.src_language and src_lang not in self.src_language:
