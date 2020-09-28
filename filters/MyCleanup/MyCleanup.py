@@ -26,7 +26,7 @@ class MyCleanup(AbstractFilter):
 	def process_tu(self, tu, num_of_finished_scans):
 		global status
 
-		find_bad(self, tu)
+		self.find_bad(self, tu)
 
 		if status == "Deleted":
 			return [0]
@@ -38,7 +38,7 @@ class MyCleanup(AbstractFilter):
 	def decide(self, tu):
 		global status
 
-		find_bad(self, tu)
+		self.find_bad(self, tu)
 
 		if status == "Deleted":
 			return 'reject'
@@ -47,13 +47,13 @@ class MyCleanup(AbstractFilter):
 	def find_bad(self, tu):
 		global status
 
-		garbage = bad_symbol_number(tu.src_phrase)
-		cleaning(tu.src_phrase, garbage)
+		garbage = self.bad_symbol_number(tu.src_phrase)
+		self.cleaning(tu.src_phrase, garbage)
 
-		garbage = bad_symbol_number(tu.trg_phrase)
-		cleaning(tu.trg_phrase, garbage)
+		garbage = self.bad_symbol_number(tu.trg_phrase)
+		self.cleaning(tu.trg_phrase, garbage)
 
-		cleaning_diff(tu.src_phrase, tu.trg_phrase)
+		self.cleaning_diff(tu.src_phrase, tu.trg_phrase)
 
 		return status
 
