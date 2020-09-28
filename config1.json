@@ -35,6 +35,8 @@
 		["Lang_Identifier_po",					"off"],
 		["Lang_Identifier_ft",					"on"],
 
+		["MyCleanup",					"on"],
+
 		["AlignedProportion",				"off"],
 		["BigramAlignedProportion",			"off"],
 		["NumberOfUnalignedSequences",		"off"],
