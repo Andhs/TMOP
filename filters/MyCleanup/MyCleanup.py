@@ -17,7 +17,6 @@ class MyCleanup(AbstractFilter):
 		self.trg_language = extra_args['target language']
 		if extra_args['emit scores'] == True:
 			self.num_of_scans = 1
-		status = "OK"
 		return
 
 	def finalize(self):
@@ -46,7 +45,7 @@ class MyCleanup(AbstractFilter):
 
 	def find_bad(self, tu):
 		global status
-
+		status = "OK"
 		garbage = self.bad_symbol_number(tu.src_phrase)
 		self.cleaning(tu.src_phrase, garbage)
 
