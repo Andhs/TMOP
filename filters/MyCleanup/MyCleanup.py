@@ -103,8 +103,8 @@ class MyCleanup(AbstractFilter):
 		global status
 		# Имеет смысл проверять, если еще не удален параллельный сегмент за счет левого сегмента
 		if status != "Deleted":
-			cleaning_garbage(segment, garbage)
+			self.cleaning_garbage(segment, garbage)
 		if status != "Deleted":        
-			cleaning_long(segment)
+			self.cleaning_long(segment)
 
 
