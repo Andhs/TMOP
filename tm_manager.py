@@ -556,7 +556,7 @@ class TMManager:
 			line[1] = line[1].strip()
 			tu = TU()
 			tu.src_phrase = line[0]
-			tu.trg_phrase = line[0]
+			tu.trg_phrase = line[1]
 
 			if self.have_token is True:
 				token_line = tm_token_file.readline()
