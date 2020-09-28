@@ -7,11 +7,11 @@ class MyCleanup(AbstractFilter):
 		self.num_of_scans = 0
 		self.src_language = ""
 		self.trg_language = ""
-
 		return
 
 #
 	def initialize(self, source_language, target_language, extra_args):
+		global status
 		self.num_of_scans = 0
 		self.src_language = extra_args['source language']
 		self.trg_language = extra_args['target language']
@@ -24,7 +24,7 @@ class MyCleanup(AbstractFilter):
 		pass
 
 	def process_tu(self, tu, num_of_finished_scans):
-		nonlocal status
+		global status
 
 		find_bad(self, tu)
 
@@ -36,7 +36,7 @@ class MyCleanup(AbstractFilter):
 		pass
 
 	def decide(self, tu):
-		nonlocal status
+		global status
 
 		find_bad(self, tu)
 
@@ -45,7 +45,7 @@ class MyCleanup(AbstractFilter):
 		return 'accept'
 
 	def find_bad(self, tu):
-		nonlocal status
+		global status
 
 		garbage = bad_symbol_number(tu.src_phrase)
 		cleaning(tu.src_phrase, garbage)
@@ -69,13 +69,13 @@ class MyCleanup(AbstractFilter):
 
 	# Собственно чистка - убираем сегмент, если в нем слишком большая доля не самых нужных символов. Меняем статус (для правого сегмента - если уже не была удалена строка по левому сегменту)
 	def cleaning_garbage(segment, garbage):
-		nonlocal status
+		global status
 		if garbage/len(segment.strip('\n')) > 0.45:
 			status = "Deleted"
 
 	# Убираем сегменты слишком длинные (по числу слов, а число слов - количество пробелов + 1)
 	def cleaning_long(segment):
-		nonlocal status
+		global status
 		words = 1
 		for c in segment:
 			if c == " ":
@@ -85,7 +85,7 @@ class MyCleanup(AbstractFilter):
 
 	# Убираем сегменты, которые слишком различаются по длине (по словам)
 	def cleaning_diff(segment_one, segment_two):
-		nonlocal status
+		global status
 		if status != "Deleted":
 			words_one = 1
 			words_two = 1
@@ -100,7 +100,7 @@ class MyCleanup(AbstractFilter):
 
 	# Собираем все случаи чистки (реализуемые по одному из параллельных сегментов) в одну функцию
 	def cleaning(segment, garbage):
-		nonlocal status
+		global status
 		# Имеет смысл проверять, если еще не удален параллельный сегмент за счет левого сегмента
 		if status != "Deleted":
 			cleaning_garbage(segment, garbage)
