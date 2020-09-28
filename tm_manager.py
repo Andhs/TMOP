@@ -385,7 +385,7 @@ class TMManager:
 		logging.info("Number of scans needed: {}".format(max_scan))
 
 		# Extending the input URL
-		input_file_path = '/content/' + self.options['input file']
+		input_file_path = self.options['input file']
 
 		if not os.path.isfile(input_file_path):
 			logging.warning("Input file not found!\nGiven file in config file: " + input_file_path)
@@ -513,7 +513,7 @@ class TMManager:
 		logging.info("======================================================================")
 
 		# Extending the input URL
-		input_file_path = '/content/' + self.options['input file']
+		input_file_path = self.options['input file']
 
 		# Making an output file for skipped TUs
 		out_path = os.getcwd() + "/" + self.options['output folder'] + "/"
