@@ -296,7 +296,7 @@ class TMManager:
 			if self.create_out_files:
 				if (answer + "_" + policy_tuple[0]) not in self.output_files:
 					path = os.getcwd() + "/" + self.options['output folder'] + "/"
-					out_file_name = path + answer + "_" + policy_tuple[0] + "__" + self.options['input file']
+					out_file_name = path + answer + "_" + policy_tuple[0] + "__" + os.path.basename(self.options['input file'])
 
 					out_file = open(out_file_name, 'w')
 					self.output_files[(answer + "_" + policy_tuple[0])] = out_file
@@ -385,7 +385,7 @@ class TMManager:
 		logging.info("Number of scans needed: {}".format(max_scan))
 
 		# Extending the input URL
-		input_file_path = '/content/' + self.options['input file']
+		input_file_path = self.options['input file']
 
 		if not os.path.isfile(input_file_path):
 			logging.warning("Input file not found!\nGiven file in config file: " + input_file_path)
@@ -413,7 +413,7 @@ class TMManager:
 
 		if self.have_scores:
 			out_path = os.getcwd() + "/" + self.options['output folder'] + "/"
-			score_file_name = out_path + "scores__" + self.options['input file']
+			score_file_name = out_path + "scores__" + os.path.basename(self.options['input file'])
 			score_file = open(score_file_name, "w")
 			score_file.close()
 
@@ -475,7 +475,7 @@ class TMManager:
 				# writing filters' scores in the scores file
 				if self.have_scores and (max_scan - scan_number <= 1):
 					out_path = os.getcwd() + "/" + self.options['output folder'] + "/"
-					score_file_name = out_path + "scores__" + self.options['input file']
+					score_file_name = out_path + "scores__" + os.path.basename(self.options['input file'])
 					with open(score_file_name, "a") as score_file:
 						scores = str(scores).replace("[", "").replace("]", "").replace(" ", "")
 						score_file.write(scores + "\n")
@@ -513,15 +513,15 @@ class TMManager:
 		logging.info("======================================================================")
 
 		# Extending the input URL
-		input_file_path = '/content/' + self.options['input file']
+		input_file_path = self.options['input file']
 
 		# Making an output file for skipped TUs
 		out_path = os.getcwd() + "/" + self.options['output folder'] + "/"
-		skipped_file_name = out_path + "skipped__" + self.options['input file']
+		skipped_file_name = out_path + "skipped__" + os.path.basename(self.options['input file'])
 		self.output_files['skipped'] = open(skipped_file_name, 'w')
 
 		# Making an output file for all the decisions made
-		decision_log_file_name = out_path + "decision_log__" + self.options['input file']
+		decision_log_file_name = out_path + "decision_log__" + os.path.basename(self.options['input file'])
 		self.output_files['log'] = open(decision_log_file_name, 'w')
 
 		tm_file = codecs.open(input_file_path, 'r', "utf-8")
