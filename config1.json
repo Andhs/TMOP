@@ -31,8 +31,8 @@
 		["RepeatedChars",					"off"],
 		["RepeatedWords",					"off"],
 
-		["Lang_Identifier",					"on"],
-		["Lang_Identifier_po",					"on"],
+		["Lang_Identifier",					"off"],
+		["Lang_Identifier_po",					"off"],
 		["Lang_Identifier_ft",					"on"],
 
 		["AlignedProportion",				"off"],

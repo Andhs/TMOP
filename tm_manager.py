@@ -385,7 +385,7 @@ class TMManager:
 		logging.info("Number of scans needed: {}".format(max_scan))
 
 		# Extending the input URL
-		input_file_path = os.getcwd() + '/data/' + self.options['input file']
+		input_file_path = '/content/' + self.options['input file']
 
 		if not os.path.isfile(input_file_path):
 			logging.warning("Input file not found!\nGiven file in config file: " + input_file_path)
@@ -438,16 +438,16 @@ class TMManager:
 					alignment = alignment.strip().split(" ")
 					alignment = [x.split('-') for x in alignment if x != '']
 
-				if len(line) != 3:
+				if len(line) != 2:
 					logging.warning("Invalid translation unit at line {}".format(line_no))
 					continue
 
 				# The 1st and 2nd elements of each line are phrases from source and target language.
+				line[0] = line[0].strip()
 				line[1] = line[1].strip()
-				line[2] = line[2].strip()
 				tu = TU()
-				tu.src_phrase = line[1]
-				tu.trg_phrase = line[2]
+				tu.src_phrase = line[0]
+				tu.trg_phrase = line[1]
 
 				if self.have_token is True:
 					token_line = tm_token_file.readline()
@@ -513,7 +513,7 @@ class TMManager:
 		logging.info("======================================================================")
 
 		# Extending the input URL
-		input_file_path = os.getcwd() + '/data/' + self.options['input file']
+		input_file_path = '/content/' + self.options['input file']
 
 		# Making an output file for skipped TUs
 		out_path = os.getcwd() + "/" + self.options['output folder'] + "/"
