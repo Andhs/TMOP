@@ -26,7 +26,7 @@ class MyCleanup(AbstractFilter):
 	def process_tu(self, tu, num_of_finished_scans):
 		global status
 
-		self.find_bad(self, tu)
+		self.find_bad(tu)
 
 		if status == "Deleted":
 			return [0]
@@ -38,7 +38,7 @@ class MyCleanup(AbstractFilter):
 	def decide(self, tu):
 		global status
 
-		self.find_bad(self, tu)
+		self.find_bad(tu)
 
 		if status == "Deleted":
 			return 'reject'
@@ -58,7 +58,7 @@ class MyCleanup(AbstractFilter):
 		return status
 
 	# Подсчитываем число не самых нужных символов
-	def bad_symbol_number(segment):
+	def bad_symbol_number(self, segment):
 	# Список символов, которых не должно быть много, иначе это слишком мусорный сегмент
 		badsymbols = "«»\'!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~01234567890 "
 		garbage = 0
@@ -68,13 +68,13 @@ class MyCleanup(AbstractFilter):
 		return(garbage)
 
 	# Собственно чистка - убираем сегмент, если в нем слишком большая доля не самых нужных символов. Меняем статус (для правого сегмента - если уже не была удалена строка по левому сегменту)
-	def cleaning_garbage(segment, garbage):
+	def cleaning_garbage(self, segment, garbage):
 		global status
 		if garbage/len(segment.strip('\n')) > 0.45:
 			status = "Deleted"
 
 	# Убираем сегменты слишком длинные (по числу слов, а число слов - количество пробелов + 1)
-	def cleaning_long(segment):
+	def cleaning_long(self, segment):
 		global status
 		words = 1
 		for c in segment:
@@ -84,7 +84,7 @@ class MyCleanup(AbstractFilter):
 			status = "Deleted"
 
 	# Убираем сегменты, которые слишком различаются по длине (по словам)
-	def cleaning_diff(segment_one, segment_two):
+	def cleaning_diff(self, segment_one, segment_two):
 		global status
 		if status != "Deleted":
 			words_one = 1
@@ -99,7 +99,7 @@ class MyCleanup(AbstractFilter):
 				status = "Deleted"
 
 	# Собираем все случаи чистки (реализуемые по одному из параллельных сегментов) в одну функцию
-	def cleaning(segment, garbage):
+	def cleaning(self, segment, garbage):
 		global status
 		# Имеет смысл проверять, если еще не удален параллельный сегмент за счет левого сегмента
 		if status != "Deleted":
