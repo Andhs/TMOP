@@ -422,11 +422,11 @@ class TMManager:
 			active_filters = [(x[0], x[1], x[2]-(max_scan-scan_number)) for x in self.filters if x[2] >= max_scan-scan_number]
 
 			# The input file is in CSV Tab separated format.
-			tm_file = codecs.open(input_file_path, 'r', "utf-8")
+			tm_file = codecs.open(input_file_path, 'r', "utf-8-sig")
 			if self.have_alignment is True:
 				tm_align_file = open(align_file_path, 'r')
 			if self.have_token is True:
-				tm_token_file = codecs.open(token_file_path, 'r', "utf-8")
+				tm_token_file = codecs.open(token_file_path, 'r', "utf-8-sig")
 
 			line_no = 0
 			for line in tm_file:
@@ -524,11 +524,11 @@ class TMManager:
 		decision_log_file_name = out_path + "decision_log__" + os.path.basename(self.options['input file'])
 		self.output_files['log'] = open(decision_log_file_name, 'w')
 
-		tm_file = codecs.open(input_file_path, 'r', "utf-8")
+		tm_file = codecs.open(input_file_path, 'r', "utf-8-sig")
 		if self.have_alignment is True:
 			tm_align_file = open(align_file_path, 'r')
 		if self.have_token is True:
-			tm_token_file = codecs.open(token_file_path, 'r', "utf-8")
+			tm_token_file = codecs.open(token_file_path, 'r', "utf-8-sig")
 
 		line_no = 0
 		for line in tm_file:
