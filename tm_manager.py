@@ -393,7 +393,7 @@ class TMManager:
 			return
 
 		if self.have_alignment:
-			align_file_path = os.getcwd() + '/data/' + self.options['align file']
+			align_file_path = self.options['align file']
 
 			if not os.path.isfile(align_file_path):
 				logging.warning("Alignment file not found!\nGiven file in config file: " + align_file_path)
@@ -402,7 +402,7 @@ class TMManager:
 
 		# For tokenizing the TUs and put the output in TU objects
 		if self.have_token:
-			token_file_path = os.getcwd() + '/data/' + self.options['token file']
+			token_file_path = self.options['token file']
 
 			if not os.path.isfile(token_file_path):
 				logging.warning("Token file not found!\nGiven file in config file: " + token_file_path)
