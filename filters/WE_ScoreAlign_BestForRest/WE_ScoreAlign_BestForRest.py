@@ -5,7 +5,7 @@ from scipy.sparse import lil_matrix
 from scipy.spatial.distance import cosine
 from gensim.matutils import Sparse2Corpus
 from gensim.models import lsimodel
-from sets import Set
+#from sets import Set
 import numpy as np
 import os.path
 import math
@@ -138,6 +138,7 @@ class WE_ScoreAlign_BestForRest(AbstractFilter):
 			if index == -1:
 				return [0]
 
+			trg_mark = set()
 			trg_mark = Set()
 			avg_distance = 0.0
 			counter = 0.0
@@ -154,7 +155,8 @@ class WE_ScoreAlign_BestForRest(AbstractFilter):
 				avg_distance += dist
 				counter += 1
 
-			trg_mark = Set(trg_vectors) - trg_mark
+			trg_mark = set(trg_vectors) - trg_mark
+#			trg_mark = Set(trg_vectors) - trg_mark
 			for t_w in trg_mark:
 				min_dist = 1.0
 				for s_w in src_vectors:
@@ -205,10 +207,10 @@ class WE_ScoreAlign_BestForRest(AbstractFilter):
 			print("number of TUs:", self.number_of_tus)
 			self.number_of_tus = 0
 
-			f = open(self.dict_file_name, "wb")
-
+			f = open(self.dict_file_name, "w")
+#			f = open(self.dict_file_name, "wb")
 			for w in self.all_words:
-				f.write(w.encode("utf-8"))
+#				f.write(w.encode("utf-8"))
 				f.write("\t" + str(self.all_words[w]) + "\n")
 			f.close()
 
@@ -250,7 +252,8 @@ class WE_ScoreAlign_BestForRest(AbstractFilter):
 		if index == -1:
 			return 'neutral'
 
-		trg_mark = Set()
+		trg_mark = set()
+#		trg_mark = Set()
 		avg_distance = 0.0
 		counter = 0.0
 		for align_pair in tu.alignment:
@@ -266,7 +269,8 @@ class WE_ScoreAlign_BestForRest(AbstractFilter):
 			avg_distance += dist
 			counter += 1
 
-		trg_mark = Set(trg_vectors) - trg_mark
+		trg_mark = set(trg_vectors) - trg_mark
+#		trg_mark = Set(trg_vectors) - trg_mark
 		for t_w in trg_mark:
 			min_dist = 1.0
 			for s_w in src_vectors:
