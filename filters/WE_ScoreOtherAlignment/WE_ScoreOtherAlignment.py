@@ -60,7 +60,7 @@ class WE_ScoreOtherAlignment(AbstractFilter):
 			self.vectors = lsi.projection.u
 
 			self.all_words = {}
-			f = open(self.dict_file_name, "a")
+			f = open(self.dict_file_name, "a+")
 
 			for l in f:
 				l = l.strip().split("\t")
@@ -199,7 +199,7 @@ class WE_ScoreOtherAlignment(AbstractFilter):
 			print("number of TUs:", self.number_of_tus)
 			self.number_of_tus = 0
 
-			f = open(self.dict_file_name, "a")
+			f = open(self.dict_file_name, "a+")
 
 			for w in self.all_words:
 				f.write(w)
