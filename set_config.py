@@ -7,6 +7,8 @@ def modify_json(input_file, sourcel, targetl):
     a_file.close()
 
     json_object["options"]["input file"] = input_file
+    json_object["options"]["align file"] = input_file[:-4] + "_align.txt"
+    json_object["options"]["token file"] = input_file[:-4] + "_token.txt"
     if sourcel == "ru":
         json_object["options"]["source language"] = "ru", "ba", "be", "bg", "kk", "ky", "mk", "mn", "sr", "tt", "uk"
     elif sourcel == "en":

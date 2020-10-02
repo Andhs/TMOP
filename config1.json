@@ -1,6 +1,6 @@
 {
 	"options": {
-		"input file":				"text_rpharm_ru_en_test.txt",
+		"input file":				"text.txt",
 
 		"output folder":			"output",
 		"source language":			"ru",
@@ -27,9 +27,9 @@
 		["WordRatio",						"off"],
 		["ReverseWordRatio",				"off"],
 		["WordLength",						"off"],
-		["TagFinder",						"off"],
-		["RepeatedChars",					"off"],
-		["RepeatedWords",					"off"],
+		["TagFinder",						"on"],
+		["RepeatedChars",					"on"],
+		["RepeatedWords",					"on"],
 
 		["Lang_Identifier",					"off"],
 		["Lang_Identifier_po",					"off"],
@@ -37,21 +37,21 @@
 
 		["MyCleanup",					"on"],
 
-		["AlignedProportion",				"off"],
-		["BigramAlignedProportion",			"off"],
-		["NumberOfUnalignedSequences",		"off"],
-		["LongestAlignedSequence",			"off"],
-		["LongestUnalignedSequence",		"off"],
-		["AlignedSequenceLength",			"off"],
-		["UnalignedSequenceLength",			"off"],
-		["FirstUnalignedWord",				"off"],
-		["LastUnalignedWord",				"off"],
+		["AlignedProportion",				"on"],
+		["BigramAlignedProportion",			"on"],
+		["NumberOfUnalignedSequences",		"on"],
+		["LongestAlignedSequence",			"on"],
+		["LongestUnalignedSequence",		"on"],
+		["AlignedSequenceLength",			"on"],
+		["UnalignedSequenceLength",			"on"],
+		["FirstUnalignedWord",				"on"],
+		["LastUnalignedWord",				"on"],
 
-		["WE_Average",						"off"],
-		["WE_Median",						"off"],
-		["WE_BestAlignScore",				"off"],
-		["WE_ScoreOtherAlignment",			"off"],
-		["WE_ScoreAlign_BestForRest",		"off"]
+		["WE_Average",						"on"],
+		["WE_Median",						"on"],
+		["WE_BestAlignScore",				"on"],
+		["WE_ScoreOtherAlignment",			"on"],
+		["WE_ScoreAlign_BestForRest",		"on"]
 	]
 }
 
