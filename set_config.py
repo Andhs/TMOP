@@ -9,19 +9,22 @@ def modify_json(input_file, sourcel, targetl):
     json_object["options"]["input file"] = input_file
     json_object["options"]["align file"] = "/content/forward_align.txt"
     json_object["options"]["token file"] = input_file[:-4] + "_token.txt"
-    if sourcel == "ru":
-        json_object["options"]["source language"] = "ru", "ba", "be", "bg", "kk", "ky", "mk", "mn", "sr", "tt", "uk"
-    elif sourcel == "en":
-        json_object["options"]["source language"] = "en", "fr"
-    else:
-        json_object["options"]["source language"] = sourcel
+    json_object["options"]["source language"] = sourcel
 
-    if targetl == "ru":
-        json_object["options"]["target language"] = "ru", "ba", "be", "bg", "kk", "ky", "mk", "mn", "sr", "tt", "uk"
-    elif targetl == "en":
-        json_object["options"]["target language"] = "en", "fr"
+    if sourcel == "ru":
+        json_object["options"]["source language extended"] = "ru", "ba", "be", "bg", "kk", "ky", "mk", "mn", "sr", "tt", "uk"
+    elif sourcel == "en":
+        json_object["options"]["source language extended"] = "en", "fr"
     else:
-        json_object["options"]["target language"] = targetl
+        json_object["options"]["source language extended"] = sourcel
+
+    json_object["options"]["target language"] = targetl
+    if targetl == "ru":
+        json_object["options"]["target language extended"] = "ru", "ba", "be", "bg", "kk", "ky", "mk", "mn", "sr", "tt", "uk"
+    elif targetl == "en":
+        json_object["options"]["target language extended"] = "en", "fr"
+    else:
+        json_object["options"]["target language extended"] = targetl
 
 # Пример изменения других полей (фильтров)
 #    json_object["policies"][0] = ["OneNo", "off"]

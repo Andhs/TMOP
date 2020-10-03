@@ -12,8 +12,8 @@ class Lang_Identifier_ft(AbstractFilter):
 
 	def initialize(self, source_language, target_language, extra_args):
 		self.num_of_scans = 0
-		self.src_language = extra_args['source language']
-		self.trg_language = extra_args['target language']
+		self.src_language = extra_args['source language extended']
+		self.trg_language = extra_args['target language extended']
 		self.normalize = extra_args['normalize scores']
 
 		if extra_args['emit scores'] == True:
