@@ -348,6 +348,8 @@ class TMManager:
 		filters_arguments = {}
 		filters_arguments["source language"] = self.options['source language']
 		filters_arguments["target language"] = self.options['target language']
+		filters_arguments["source language extended"] = self.options['source language extended']
+		filters_arguments["target language extended"] = self.options['target language extended']
 		filters_arguments["input filename"] = self.options['input file']
 		filters_arguments["normalize scores"] = self.normalize_scores
 		filters_arguments["emit scores"] = self.have_scores
