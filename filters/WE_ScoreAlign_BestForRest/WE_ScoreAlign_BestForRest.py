@@ -139,7 +139,7 @@ class WE_ScoreAlign_BestForRest(AbstractFilter):
 				return [0]
 
 			trg_mark = set()
-			trg_mark = Set()
+#			trg_mark = Set()
 			avg_distance = 0.0
 			counter = 0.0
 			for align_pair in tu.alignment:
