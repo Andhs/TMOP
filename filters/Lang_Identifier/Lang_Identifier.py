@@ -39,7 +39,7 @@ class Lang_Identifier(AbstractFilter):
 	def decide(self, tu):
 		src_lang = langid.classify(tu.src_phrase)[0]
 		trg_lang = langid.classify(tu.trg_phrase)[0]
-		print("LG: ", src_lang + " to " + trg_lang)
+#		print("LG: ", src_lang + " to " + trg_lang)
  
 		if src_lang != self.src_language and src_lang not in self.src_language:
 			return 'reject'

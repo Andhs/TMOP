@@ -38,7 +38,7 @@ class Lang_Identifier_po(AbstractFilter):
 	def decide(self, tu):
 		src_lang = Detector(tu.src_phrase, quiet=True).language.code
 		trg_lang = Detector(tu.trg_phrase, quiet=True).language.code
-		print("PO: ", src_lang + " to " + trg_lang)
+#		print("PO: ", src_lang + " to " + trg_lang)
 
 		if src_lang != self.src_language and src_lang not in self.src_language:
 			return 'reject'
