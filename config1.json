@@ -39,13 +39,13 @@
 
 		["AlignedProportion",				"on"],
 		["BigramAlignedProportion",			"on"],
-		["NumberOfUnalignedSequences",		"on"],
-		["LongestAlignedSequence",			"on"],
-		["LongestUnalignedSequence",		"on"],
+		["NumberOfUnalignedSequences",		"off"],
+		["LongestAlignedSequence",			"off"],
+		["LongestUnalignedSequence",		"off"],
 		["AlignedSequenceLength",			"on"],
 		["UnalignedSequenceLength",			"on"],
-		["FirstUnalignedWord",				"on"],
-		["LastUnalignedWord",				"on"],
+		["FirstUnalignedWord",				"off"],
+		["LastUnalignedWord",				"off"],
 
 		["WE_Average",						"on"],
 		["WE_Median",						"on"],
