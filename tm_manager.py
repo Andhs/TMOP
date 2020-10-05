@@ -283,7 +283,7 @@ class TMManager:
 
 	#
 	def policy_check_for_tu(self, tu_string, results):
-		self.output_files['log'].write(tu_string.split('\t')[0] + '\t')
+		self.output_files['log'].write(tu_string.split('\t')[0] + '\t' + tu_string.split('\t')[1] + '\t')
 		for policy_tuple in self.policies:
 			try:
 				answer = policy_tuple[1].decide(results)
