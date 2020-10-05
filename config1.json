@@ -28,7 +28,7 @@
 		["ReverseWordRatio",				"off"],
 		["WordLength",						"off"],
 		["TagFinder",						"on"],
-		["RepeatedChars",					"on"],
+		["RepeatedChars",					"off"],
 		["RepeatedWords",					"on"],
 
 		["Lang_Identifier",					"off"],
@@ -37,21 +37,21 @@
 
 		["MyCleanup",					"on"],
 
-		["AlignedProportion",				"on"],
-		["BigramAlignedProportion",			"on"],
+		["AlignedProportion",				"off"],
+		["BigramAlignedProportion",			"off"],
 		["NumberOfUnalignedSequences",		"off"],
 		["LongestAlignedSequence",			"off"],
 		["LongestUnalignedSequence",		"off"],
-		["AlignedSequenceLength",			"on"],
-		["UnalignedSequenceLength",			"on"],
+		["AlignedSequenceLength",			"off"],
+		["UnalignedSequenceLength",			"off"],
 		["FirstUnalignedWord",				"off"],
 		["LastUnalignedWord",				"off"],
 
-		["WE_Average",						"on"],
-		["WE_Median",						"on"],
-		["WE_BestAlignScore",				"on"],
-		["WE_ScoreOtherAlignment",			"on"],
-		["WE_ScoreAlign_BestForRest",		"on"]
+		["WE_Average",						"off"],
+		["WE_Median",						"off"],
+		["WE_BestAlignScore",				"off"],
+		["WE_ScoreOtherAlignment",			"off"],
+		["WE_ScoreAlign_BestForRest",		"off"]
 	]
 }
 
