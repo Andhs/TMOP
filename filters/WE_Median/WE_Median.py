@@ -176,7 +176,7 @@ class WE_Median(AbstractFilter):
 			print("number of TUs:", self.number_of_tus)
 			self.number_of_tus = 0
 
-			f = open(self.dict_file_name, 'a')
+			f = open(self.dict_file_name, 'a+')
 
 			for w in self.all_words:
 				f.write(w)

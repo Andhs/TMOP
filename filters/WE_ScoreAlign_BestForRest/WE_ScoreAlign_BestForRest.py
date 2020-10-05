@@ -210,6 +210,7 @@ class WE_ScoreAlign_BestForRest(AbstractFilter):
 			f = open(self.dict_file_name, "w")
 #			f = open(self.dict_file_name, "wb")
 			for w in self.all_words:
+				f.write(w)
 #				f.write(w.encode("utf-8"))
 				f.write("\t" + str(self.all_words[w]) + "\n")
 			f.close()
