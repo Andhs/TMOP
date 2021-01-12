@@ -94,7 +94,7 @@ class MyCleanup(AbstractFilter):
 			for c in segment_two:
 				if c == " ":
 					words_two += 1
-			if (words_one/words_two > 1.5 or words_two/words_one > 1.5) and words_one > 10 and words_two > 10: 
+			if (words_one/words_two > 1.7 or words_two/words_one > 1.7) and words_one > 10 and words_two > 10: 
 				status = "Deleted"
 
 	# Собираем все случаи чистки (реализуемые по одному из параллельных сегментов) в одну функцию
